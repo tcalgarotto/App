@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App de Codificação</title>
+</head>
+<body>
+  <h1>Bem-vindo ao App de Codificação</h1>
+
+  <h2>Codificar Mensagem</h2>
+  <form>
+    <label for="mensagem">Digite sua mensagem:</label><br>
+    <input type="text" id="mensagem" name="mensagem"><br>
+    <button type="button" onclick="codificarMensagem()">Codificar</button>
+  </form>
+
+  <h2>Decodificar Mensagem</h2>
+  <form>
+    <label for="mensagemCodificada">Digite o código:</label><br>
+    <input type="text" id="mensagemCodificada" name="mensagemCodificada"><br>
+    <button type="button" onclick="decodificarMensagem()">Decodificar</button>
+  </form>
+
+  <script src="codificador.js"></script>
+  <script src="decodificador.js"></script>
+  <script>
+    function codificarMensagem() {
+      const inputMensagem = document.getElementById("mensagem");
+      const mensagem = inputMensagem.value;
+
+      const mensagemCodificada = encodeMessage(mensagem);
+
+      alert("Mensagem codificada: " + mensagemCodificada);
+    }
+
+    function decodificarMensagem() {
+      const inputMensagemCodificada = document.getElementById("mensagemCodificada");
+      const mensagemCodificada = inputMensagemCodificada.value;
+
+      const mensagemDecodificada = decodeMessage(mensagemCodificada);
+
+      alert("Mensagem decodificada: " + mensagemDecodificada);
+    }
+  </script>
+</body>
+</html>
+
